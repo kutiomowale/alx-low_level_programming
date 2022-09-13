@@ -14,7 +14,7 @@ int main(void)
 	char ab[] = "_putchar";
 	int n = 0;
 
-	while (n < 7)
+	while (n < 8)
 	{
 		_putchar(ab[n]);
 		n++;
