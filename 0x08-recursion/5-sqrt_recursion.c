@@ -4,7 +4,6 @@
  * @i: the possible result
  * Return: the result
  */
-int i = 0;
 int help(int n, int i)
 {
 	if (n == i)
@@ -39,6 +38,6 @@ int _sqrt_recursion(int n)
 	}
 	else
 	{
-		return (help(n, i));
+		return (help(n, 0));
 	}
 }
