@@ -18,14 +18,13 @@ char *_strdup(char *str)
 	else
 	{
 		int i, j;
+		char *new;	/* new is a pointer to the new string */
 
 		i = 0;	/* length of string pointed to by str */
 		while (*(str + i) != 0)
 		{
 			i++;
 		}
-
-		char *new;	/* new is a pointer to the new string */
 
 		new = malloc(sizeof(char) * i);
 
