@@ -40,6 +40,6 @@ int main(int argc, char *argv[])
 			i++;
 		}
 		printf("%d\n", addition);
-		return (0);
 	}
+	return (0);
 }
