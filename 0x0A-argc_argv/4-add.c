@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <ctype.h>
 
 /**
  * main - a program that adds positive numbers
@@ -21,23 +22,21 @@ int main(int argc, char *argv[])
 	}
 	else
 	{
-		int addition, i;
+		int addition, i, j;
 
 		addition = 0;
 
-		i = 1;
-		while (i < argc)
+		for (i = 1; i < argc; i++)
 		{
-			if (atoi(argv[i]) <= 0 && *argv[i] != '0')
+			for (j = 0; argv[i][j]  != '\0'; j++)
 			{
-				printf("Error\n");
-				return (1);
+				if (!(isdigit(argv[i][j])))
+				{
+					printf("Error\n");
+					return (1);
+				}
 			}
-			else
-			{
-				addition = addition + atoi(argv[i]);
-			}
-			i++;
+			addition = addition + atoi(argv[i]);
 		}
 		printf("%d\n", addition);
 	}
