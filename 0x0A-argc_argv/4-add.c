@@ -28,7 +28,7 @@ int main(int argc, char *argv[])
 		i = 1;
 		while (i < argc)
 		{
-			if (atoi(argv[i]) == 0)
+			if (atoi(argv[i]) == kk)
 			{
 				printf("Error\n");
 				return (1);
