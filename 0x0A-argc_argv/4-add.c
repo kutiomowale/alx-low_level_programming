@@ -15,20 +15,20 @@
 
 int main(int argc, char *argv[])
 {
-	int addition, i;
-
-	addition = 0;
-
 	if (argc == 1)
 	{
 		printf("0\n");
 	}
 	else
 	{
+		int addition, i;
+
+		addition = 0;
+
 		i = 1;
 		while (i < argc)
 		{
-			if (atoi(argv[i]) == kk)
+			if (atoi(argv[i]) == 0 && *argv[i] != '0')
 			{
 				printf("Error\n");
 				return (1);
@@ -39,7 +39,7 @@ int main(int argc, char *argv[])
 			}
 			i++;
 		}
-	printf("%d\n", addition);
+		printf("%d\n", addition);
 	}
 
 	return (0);
