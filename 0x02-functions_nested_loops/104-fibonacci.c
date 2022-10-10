@@ -13,7 +13,8 @@
  */
 int main(void)
 {
-	unsigned long int counter, fibonacci1, fibonacci2, fibonacci3;
+	float fibonacci1, fibonacci2, fibonacci3;
+	int counter;
 
 	printf("1, 2, ");
 
@@ -23,15 +24,7 @@ int main(void)
 	while (counter <= 98)
 	{
 		fibonacci3 = fibonacci1 + fibonacci2;
-		if (fibonacci3 > 7540113804746346429)
-		{
-			printf("%ld", (fibonacci3 / 1000000000));
-			printf("%ld", (fibonacci3 % 1000000000));
-		}
-		else
-		{
-			printf("%ld", fibonacci3);
-		}
+		printf("%.0f", fibonacci3);
 		if (counter != 98)
 			printf(", ");
 		fibonacci1 = fibonacci2;
