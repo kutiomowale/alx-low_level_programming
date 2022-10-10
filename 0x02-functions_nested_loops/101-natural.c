@@ -26,8 +26,12 @@ int main(void)
 	while (multiples5 < 1024)
 	{
 		multiples5 = 5 * i;
-		if (multiples5 < 1024)
+		if ((multiples5 < 1024) && ((multiples5 % 3) != 0))
+		{
+		/* this prevents double inclusion of numbers that */
+		/* are mulples of both 3 and 5 */
 			sum = sum + multiples5;
+		}
 		i++;
 	}
 
