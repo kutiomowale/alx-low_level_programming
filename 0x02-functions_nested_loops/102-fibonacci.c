@@ -18,7 +18,9 @@ int main(void)
 	while (counter <= 50)
 	{
 		fibonacci3 = fibonacci1 + fibonacci2;
-		printf("%ld, ", fibonacci3);
+		printf("%ld", fibonacci3);
+		if (counter != 50)
+			printf(", ");
 		fibonacci1 = fibonacci2;
 		fibonacci2 = fibonacci3;
 		counter++;
