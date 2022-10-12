@@ -9,8 +9,6 @@
  */
 void print_dog(struct dog *d)
 {
-	char *fish = "(nil)";
-
 	if (d)
 	{
 		if (d->name)
@@ -19,25 +17,25 @@ void print_dog(struct dog *d)
 		}
 		else
 		{
-			printf("Name: %s\n", fish);
+			printf("Name: (nil)\n");
 		}
-		
+
 		if (d->age)
 		{
 			printf("Age: %.6f\n", d->age);
 		}
 		else
 		{
-			printf("Age: %s\n", fish);
+			printf("Age: (nil)");
 		}
-		
+
 		if (d->owner)
 		{
 			printf("Owner: %s\n", d->owner);
 		}
 		else
 		{
-			printf("Owner: %s\n", fish);
+			printf("Owner: (nil)\n");
 		}
 	}
 }
