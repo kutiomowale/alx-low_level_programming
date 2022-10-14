@@ -1,4 +1,5 @@
 #include <stdlib.h>
+#include "dog.h"
 /**
  * free_dog - a function that frees dogs
  * dogs is a structure creted using malloc
