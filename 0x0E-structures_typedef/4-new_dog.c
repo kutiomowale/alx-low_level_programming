@@ -10,7 +10,7 @@
 dog_t *new_dog(char *name, float age, char *owner)
 {
 	dog_t *ptr;
-	int i, lname, lowner
+	int i, lname, lowner;
 
 	ptr = malloc(sizeof(dog_t));
 	if (ptr == NULL)
