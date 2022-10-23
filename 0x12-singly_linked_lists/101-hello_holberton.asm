@@ -4,9 +4,9 @@ section .data
 	                                   ; (I'll explain soon)
 
 section .text
-	global _start
+	global main
 
-_start:
+main:
 	mov eax,4            ; The system call for write (sys_write)
 	mov ebx,1            ; File descriptor 1 - standard output
 	mov ecx,hello        ; Put the offset of hello in ecx
