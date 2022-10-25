@@ -7,11 +7,11 @@
  */
 void free_listint2(listint_t **head)
 {
-	if (!head || !*head)
-		return;
 	listint_t *previous;
 	listint_t *current;
 
+	if (!head || !*head)
+		return;
 	previous = *head;
 	current = previous->next;
 
