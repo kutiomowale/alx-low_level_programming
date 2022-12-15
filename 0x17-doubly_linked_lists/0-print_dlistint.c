@@ -17,7 +17,5 @@ size_t print_dlistint(const dlistint_t *h)
 		no_of_nodes++;
 	}
 
-	printf("-> %ld elements\n", no_of_nodes);
-
 	return (no_of_nodes);
 }
