@@ -33,6 +33,29 @@ hash_node_t *create_node(const char *key, const char *value)
 }
 
 /**
+ * update_value - A fuction that updates the value of the node of a hash table
+ * @node: The node
+ * @value: The value to update it with
+ * value is copied
+ *
+ * Return: 1 if it succeded, 0 otherwise
+ */
+int update_value(hash_node_t *node, const char *value)
+{
+	char *new_value;
+
+	if (!node || !value)
+		return (0);
+	new_value = malloc(strlen(value) + 1);
+	if (!new_value)
+		return (0);
+	strcpy(new_value, value);
+	free(node->value);
+	node->value = new_value;
+	return (1);
+}
+
+/**
  * hash_table_set - A function that adds an element to the hash table
  * @ht: is the hash tabl to add or update the key/value to
  * @key: is the key. key can not be an empty string
@@ -57,16 +80,14 @@ int hash_table_set(hash_table_t *ht, const char *key, const char *value)
 	{
 		if (strcmp(node->key, key) == 0)
 		{
-			strcpy(node->value, value);
-			return (1);
+			return (update_value(node, value));
 		}
 		temp = node->next;
 		while (temp)
 		{
 			if (strcmp((temp->key), key) == 0)
 			{
-				strcpy(temp->value, value);
-				return (1);
+				return (update_value(temp, value));
 			}
 			temp = temp->next;
 		}
