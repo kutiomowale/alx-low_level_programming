@@ -138,6 +138,7 @@ void sorted_list_insert(shash_table_t *ht, shash_node_t *snode)
 		{
 			snode->snext = current;
 			snode->sprev = current->sprev;
+			current->sprev->snext = snode;
 			current->sprev = snode;
 			return;
 		}
@@ -280,7 +281,6 @@ void shash_table_print_rev(const shash_table_t *ht)
 	}
 	printf("}\n");
 }
-#include "hash_tables.h"
 
 /**
  * shash_table_delete - A function that deletes a sorted hash table
@@ -288,20 +288,24 @@ void shash_table_print_rev(const shash_table_t *ht)
  */
 void shash_table_delete(shash_table_t *ht)
 {
+	unsigned long int index;
 	shash_node_t *current, *temp;
 
 	if (!ht)
 		return;
-	current = ht->shead;
-	if (current)
+	for (index = 0; index < ht->size; index++)
 	{
-		while (current)
+		current = ht->array[index];
+		if (current)
 		{
-			temp = current;
-			current = current->snext;
-			free(temp->key);
-			free(temp->value);
-			free(temp);
+			while (current)
+			{
+				temp = current;
+				current = current->next;
+				free(temp->key);
+				free(temp->value);
+				free(temp);
+			}
 		}
 	}
 	free(ht->array);
